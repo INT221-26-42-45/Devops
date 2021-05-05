@@ -1,0 +1,6 @@
+services:
+    details:
+      build: .
+      image: ghcr.io/jeongchedah/Practice_Devops
+      ports:
+        - "8080:8080"
