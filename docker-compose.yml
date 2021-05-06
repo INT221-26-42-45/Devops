@@ -5,8 +5,8 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     container_name: mysql
     volumes:
-      - ./mysql/initdb/:/docker-entrypoint-initdb.d
-      - ./mysql/data/:/var/lib/mysql/
+      - ./Database/mysql/:/docker-entrypoint-mysql.d
+      - ./Database/data/:/var/lib/mysql/
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -17,5 +17,12 @@ services:
       MYSQL_ROOT_HOST : ${MYSQL_ROOT_HOST}
     ports:
       - "3306:3306"
+    networks:
+      - default
+
+#define network
+networks:
+  default:
+    driver: bridge
       
 
