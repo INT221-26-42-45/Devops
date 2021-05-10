@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build: .
+    image: ghcr.io/int221-26-42-45/front-end:master
+    container_name: frontend
+    ports:
+      - '8080:80'
+
+networks:
+  default:
+    external:
+      name: projectnetwork
+
+  
