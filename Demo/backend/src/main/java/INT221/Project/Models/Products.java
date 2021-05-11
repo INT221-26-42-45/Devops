@@ -22,7 +22,7 @@ import java.util.Set;
 @Table(name = "Products")
 public class Products implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ProductId")
     private int productId;
 

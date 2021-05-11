@@ -1,5 +1,4 @@
-
-package int221.project.config;
+package INT221.Project.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
