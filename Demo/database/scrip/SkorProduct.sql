@@ -24,7 +24,7 @@ ALTER TABLE `Colors` ADD CONSTRAINT `colors_pk` PRIMARY KEY ( `ColorId` );
 
 DROP TABLE IF EXISTS `Products`;
 CREATE TABLE `Products` (
-    `ProductId` INT(10) NOT NULL,
+    `ProductId` INT(10) NOT NULL AUTO_INCREMENT,
     `ProductName` VARCHAR(40) NOT NULL,
     `ProductDescription` VARCHAR(1000) NOT NULL,
     `ProductType` VARCHAR(20) NOT NULL,
@@ -32,9 +32,10 @@ CREATE TABLE `Products` (
     `ProductPrice` DECIMAL(10,2) NOT NULL,
     `ProductDate` DATE NOT NULL,
     `ProductImg` VARCHAR(255),
-    `BrandId` INT(10) NOT NULL
+    `BrandId` INT(10) NOT NULL,
+     PRIMARY KEY (ProductId)
 );
-ALTER TABLE `Products` ADD CONSTRAINT `products_pk` PRIMARY KEY ( `ProductId` );
+
 ALTER TABLE `Products` ADD CONSTRAINT `products_uk` UNIQUE ( `ProductName` );
 ALTER TABLE `Products`
     ADD CONSTRAINT `brandid` FOREIGN KEY ( `BrandId` )
@@ -113,7 +114,7 @@ insert  into `Products`  values
 insert  into `Products`  values 
 (13, 'Nike Blazer Mid 77 Vintage', 'In the 70s, Nike is shoes were the new shoes that just launched. Our brand at the time was still trying to pioneer the basketball scene. And still have to let the basketball team in the city try the shoes to test the prototype. Of course, the design is constantly evolving Over the years But the model name remains the same, the Nike Blazer Mid 77 Vintage has always been a classic. From the first day until today.', 'Men', '41-47', '3600.00', '2021-02-28', 'Blazer.png', 2 );
 insert  into `Products`  values 
-(14, 'Nike Dunk Low WMNS ‚ÄúEaster‚Äù', 'This Nike Dunk Low features a White leather base with pastel hues covering the overlays, Swooshes, tongue labels, heels, and inner lining. A White midsole atop a Yellow speckled rubber sole completes the design.', 'Women', '35.5-40', '3500.00', '2021-11-13', 'Dunk easter.png', 2 );
+(14, 'Nike Dunk Low WMNS ìEasterî', 'This Nike Dunk Low features a White leather base with pastel hues covering the overlays, Swooshes, tongue labels, heels, and inner lining. A White midsole atop a Yellow speckled rubber sole completes the design.', 'Women', '35.5-40', '3500.00', '2021-11-13', 'Dunk easter.png', 2 );
 insert  into `Products`  values 
 (15, 'Nike Air Max 90', 'The Nike Air Max 90 follows the original OG running shoe with a signature waffle outsole. Stitched outer overlay And TPU details highlight the classic style color New shades add power to the look The Max Air cushioning system adds comfort to the journey.', 'Women', '35.5-40', '4600.00', '2020-05-12', 'Airmax 90.png', 2 );
 insert  into `Products`  values 
@@ -123,7 +124,7 @@ insert  into `Products`  values
 insert  into `Products`  values 
 (18, 'Fresh Foam Roav', 'The Fresh Foam Roav keeps you comfortable on the go. Fresh Foam cushioning creates a soft underfoot feel, while the Ultra Heel provides a snug, locked-in fit.', 'Men', '40-47', '2600.00', '2020-09-17', 'Fresh.png', 3 );
 insert  into `Products`  values 
-(19, '574', 'The 574 women‚Äôs sneaker is a collectible icon. With clean lines, a classic profile, and fun color schemes inspired by classic windbreakers, this shoe makes a standout, everyday statement that remains true to its 80s heritage. Modern comfort upgrades such as supportive ENCAP midsole cushioning and lightweight textile uppers help ensure these kicks feel as good as they look.', 'Women', '35.5-40', '2900.00', '2021-02-14', '574.png', 3 );
+(19, '574', 'The 574 womenís sneaker is a collectible icon. With clean lines, a classic profile, and fun color schemes inspired by classic windbreakers, this shoe makes a standout, everyday statement that remains true to its 80s heritage. Modern comfort upgrades such as supportive ENCAP midsole cushioning and lightweight textile uppers help ensure these kicks feel as good as they look.', 'Women', '35.5-40', '2900.00', '2021-02-14', '574.png', 3 );
 insert  into `Products`  values 
 (20, 'Numeric 440 High', 'Our New Balance Numeric NM440 is now available in a supportive high top with the NM440 High, blending premier technology with soft cushioning to create a go-to shoe for both everyday skate and wear. Featuring a 70s-inspired suede and mesh upper, this modern-retro shoe boasts both breathability and durability. A C-CAP heel wedge in the midsole helps protect against impact, while NDurance rubber outsole technology provides protection in high-wear areas to help get more out of these trusted shoes.', 'Women', '35.5-40', '3200.00', '2021-02-02', 'Numeric440.png', 3 );
 insert  into `Products`  values 
@@ -131,7 +132,7 @@ insert  into `Products`  values
 insert  into `Products`  values 
 (22, 'FuelCell Trainer', 'Subtle and stylish, the women Sola Sleek shoe highlights your femininity by accentuating your stance. The almond-shaped toe is unique in its design, while the open collar provides exceptional support without sacrificing style points. With a lightweight EVA foam cushioning and an NB Comfort Insert for added support, these women shoes are comfortable enough for all-day wear.', 'Women', '35.5-40', '4200.00', '2021-04-18', 'Fuelcell.png', 3 );
 insert  into `Products`  values 
-(23, 'TWO WXY', 'For the players unbound by position, no longer defined by 1 through 5, the TWO WXY is built for your style of play. Hyper-engineered for speed and agility at both ends of the court, it‚Äôs a performance shoe packed with tech for that explosive moment when you switch from offense to defense to offense again. The TWO WXY specializes in versatility‚Äîthe playmaker of today‚Äôs positionless game.', 'Men', '40-46', '5800.00', '2021-04-13', 'Twowxy.png', 3 );
+(23, 'TWO WXY', 'For the players unbound by position, no longer defined by 1 through 5, the TWO WXY is built for your style of play. Hyper-engineered for speed and agility at both ends of the court, itís a performance shoe packed with tech for that explosive moment when you switch from offense to defense to offense again. The TWO WXY specializes in versatilityóthe playmaker of todayís positionless game.', 'Men', '40-46', '5800.00', '2021-04-13', 'Twowxy.png', 3 );
 
 
 /*Data for the table SkorProduct*/
