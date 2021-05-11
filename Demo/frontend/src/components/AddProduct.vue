@@ -170,8 +170,11 @@ export default {
                 }
             }).then(response => {
                 response.status === 200 ? alert("Add") : alert("Error")
-                this.refreshList();
-                this.$router.push('/product');
+               // this.refreshList();
+               // this.$router.push('/product');
+            }).catch(error => {
+            let errorObject=JSON.parse(JSON.stringify(error));
+            console.log(errorObject);   
             })
         },
         closeModal(){
