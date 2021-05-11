@@ -163,14 +163,13 @@ export default {
             
             formData.append('file', this.imageFile);
             formData.append('newProduct', blob);
-
-            const got = require("got"); 
-                got.post("http://40.65.142.182/backend/add/", formData, {
+            
+            ProductService.post("/add", formData, {
                 headers: {
                     'Content-Type' : 'multipart/form-data'
                 }
-            }).
-            then(response => {
+            })
+            .then(response => {
                 response.status === 200 ? alert("Add") : alert("Error")
                // this.refreshList();
                // this.$router.push('/product');
