@@ -163,8 +163,9 @@ export default {
             
             formData.append('file', this.imageFile);
             formData.append('newProduct', blob);
-            
-            ProductService.post("/add", formData, {
+
+            const got = require("got"); 
+                got.post("http://40.65.142.182/product/add/", formData, {
                 headers: {
                     'Content-Type' : 'multipart/form-data'
                 }
