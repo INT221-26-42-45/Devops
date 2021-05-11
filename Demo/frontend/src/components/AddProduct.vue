@@ -165,11 +165,12 @@ export default {
             formData.append('newProduct', blob);
 
             const got = require("got"); 
-                got.post("http://40.65.142.182/product/add/", formData, {
+                got.post("http://40.65.142.182/backend/add/", formData, {
                 headers: {
                     'Content-Type' : 'multipart/form-data'
                 }
-            }).then(response => {
+            }).
+            then(response => {
                 response.status === 200 ? alert("Add") : alert("Error")
                // this.refreshList();
                // this.$router.push('/product');
