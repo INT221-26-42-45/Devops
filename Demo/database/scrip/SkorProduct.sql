@@ -24,7 +24,7 @@ ALTER TABLE `Colors` ADD CONSTRAINT `colors_pk` PRIMARY KEY ( `ColorId` );
 
 DROP TABLE IF EXISTS `Products`;
 CREATE TABLE `Products` (
-    `ProductId` INT(10) NOT NULL,
+    `ProductId` INT(10) NOT NULL AUTO_INCREMENT,
     `ProductName` VARCHAR(40) NOT NULL,
     `ProductDescription` VARCHAR(1000) NOT NULL,
     `ProductType` VARCHAR(20) NOT NULL,
@@ -32,9 +32,10 @@ CREATE TABLE `Products` (
     `ProductPrice` DECIMAL(10,2) NOT NULL,
     `ProductDate` DATE NOT NULL,
     `ProductImg` VARCHAR(255),
-    `BrandId` INT(10) NOT NULL
+    `BrandId` INT(10) NOT NULL,
+     PRIMARY KEY (ProductId)
 );
-ALTER TABLE `Products` ADD CONSTRAINT `products_pk` PRIMARY KEY ( `ProductId` );
+
 ALTER TABLE `Products` ADD CONSTRAINT `products_uk` UNIQUE ( `ProductName` );
 ALTER TABLE `Products`
     ADD CONSTRAINT `brandid` FOREIGN KEY ( `BrandId` )
